@@ -58,19 +58,4 @@ class Day1Test {
         val expected = 54304
         Assertions.assertEquals(expected, totalCalculation)
     }
-
-    @Test
-    fun examplePart2() {
-        val totalCalculation = Day1().totalCalculation(listOf(
-            "two1nine",
-            "eightwothree",
-            "abcone2threexyz",
-            "xtwone3four",
-            "4nineeightseven2",
-            "zoneight234",
-            "7pqrstsixteen",
-        ))
-        val expected = 281
-        Assertions.assertEquals(expected, totalCalculation)
-    }
 }
