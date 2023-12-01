@@ -23,20 +23,20 @@ class Day1Test {
     @Test
     fun sumOfFirst() {
         val totalCalculation = Day1().totalCalculation(listOf("1"))
-        val expected = 2
+        val expected = 11
         Assertions.assertEquals(expected, totalCalculation)
     }
     @Test
     fun sumOfFirstAndLast() {
         val totalCalculation = Day1().totalCalculation(listOf("123"))
-        val expected = 4
+        val expected = 13
         Assertions.assertEquals(expected, totalCalculation)
     }
 
     @Test
     fun sumOfMultiples() {
         val totalCalculation = Day1().totalCalculation(listOf("1awgass3", "awgya3ehge"))
-        val expected = 19
+        val expected = 46
         Assertions.assertEquals(expected, totalCalculation)
     }
 
