@@ -21,7 +21,7 @@ class Day1Test {
     @Test
     fun sumOfFirst() {
         val totalCalculation = Day1().totalCalculation(listOf("1"))
-        val expected = 1
+        val expected = 2
         Assertions.assertEquals(expected, totalCalculation)
     }
     @Test
