@@ -12,4 +12,10 @@ class Day1Test {
         val expected = 0
         Assertions.assertEquals(expected, totalCalculation)
     }
+    @Test
+    fun emptyContent() {
+        val totalCalculation = Day1().totalCalculation(listOf(""))
+        val expected = 0
+        Assertions.assertEquals(expected, totalCalculation)
+    }
 }
