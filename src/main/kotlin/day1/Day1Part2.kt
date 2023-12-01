@@ -21,9 +21,21 @@ class Day1Part2 {
     }
 
     private fun findFirst(input: String): String {
-        return validNumbers[input] ?: "0"
+        val list = validNumbers.keys
+        for (i in list.indices) {
+            if (input.contains(list.elementAt(i))) {
+                return validNumbers.values.elementAt(i)
+            }
+        }
+        return "0"
     }
     private fun findLast(input: String): String {
-        return validNumbers[input] ?: "0"
+        val list = validNumbers.keys
+        for (i in list.indices) {
+            if (input.contains(list.elementAt(i))) {
+                return validNumbers.values.elementAt(i)
+            }
+        }
+        return "0"
     }
 }
