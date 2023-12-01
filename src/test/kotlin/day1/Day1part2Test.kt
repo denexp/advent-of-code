@@ -26,7 +26,7 @@ class Day1part2Test {
         Assertions.assertEquals(expected, totalCalculation)
     }
     @Test
-    fun sumOfFirstAndLastD() {
+    fun sumOfFirstAndLast() {
         val totalCalculation = Day1Part2().totalCalculation(listOf("twotwo"))
         val expected = 22
         Assertions.assertEquals(expected, totalCalculation)
@@ -36,6 +36,13 @@ class Day1part2Test {
     fun sumOfFirstAndLastDifferent() {
         val totalCalculation = Day1Part2().totalCalculation(listOf("two1nine"))
         val expected = 29
+        Assertions.assertEquals(expected, totalCalculation)
+    }
+
+    @Test
+    fun sumOfFirstAndLastDigits() {
+        val totalCalculation = Day1Part2().totalCalculation(listOf("4nineeightseven2"))
+        val expected = 42
         Assertions.assertEquals(expected, totalCalculation)
     }
 
