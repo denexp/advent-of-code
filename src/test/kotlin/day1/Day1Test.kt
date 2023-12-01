@@ -18,4 +18,10 @@ class Day1Test {
         val expected = 0
         Assertions.assertEquals(expected, totalCalculation)
     }
+    @Test
+    fun findFirst() {
+        val totalCalculation = Day1().totalCalculation(listOf("1"))
+        val expected = 1
+        Assertions.assertEquals(expected, totalCalculation)
+    }
 }
