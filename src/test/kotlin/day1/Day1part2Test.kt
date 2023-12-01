@@ -6,6 +6,20 @@ import org.junit.jupiter.api.Test
 class Day1part2Test {
 
     @Test
+    fun emptyList() {
+        val totalCalculation = Day1Part2().totalCalculation(emptyList<String>())
+        val expected = 0
+        Assertions.assertEquals(expected, totalCalculation)
+    }
+
+    @Test
+    fun emptyContent() {
+        val totalCalculation = Day1Part2().totalCalculation(listOf(""))
+        val expected = 0
+        Assertions.assertEquals(expected, totalCalculation)
+    }
+
+    @Test
     fun examplePart2() {
         val totalCalculation = Day1Part2().totalCalculation(listOf(
             "two1nine",
