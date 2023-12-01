@@ -31,7 +31,7 @@ class Day1Part2 {
     }
     private fun findLast(input: String): String {
         val list = validNumbers.keys
-        for (i in list.indices) {
+        for (i in list.indices.reversed()) {
             if (input.contains(list.elementAt(i))) {
                 return validNumbers.values.elementAt(i)
             }
