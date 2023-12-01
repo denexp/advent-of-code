@@ -24,4 +24,10 @@ class Day1Test {
         val expected = 1
         Assertions.assertEquals(expected, totalCalculation)
     }
+    @Test
+    fun findFirstAndLast() {
+        val totalCalculation = Day1().totalCalculation(listOf("123"))
+        val expected = 13
+        Assertions.assertEquals(expected, totalCalculation)
+    }
 }
