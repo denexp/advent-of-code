@@ -30,4 +30,11 @@ class Day1Test {
         val expected = 4
         Assertions.assertEquals(expected, totalCalculation)
     }
+
+    @Test
+    fun sumOfMultiples() {
+        val totalCalculation = Day1().totalCalculation(listOf("1awgass3", "awgya3ehge"))
+        val expected = 10
+        Assertions.assertEquals(expected, totalCalculation)
+    }
 }
