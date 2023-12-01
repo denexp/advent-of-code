@@ -25,6 +25,12 @@ class Day1part2Test {
         val expected = 22
         Assertions.assertEquals(expected, totalCalculation)
     }
+    @Test
+    fun sumOfFirstAndLast() {
+        val totalCalculation = Day1Part2().totalCalculation(listOf("twotwo"))
+        val expected = 22
+        Assertions.assertEquals(expected, totalCalculation)
+    }
 
     @Test
     fun examplePart2() {
