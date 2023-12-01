@@ -45,6 +45,12 @@ class Day1part2Test {
         val expected = 42
         Assertions.assertEquals(expected, totalCalculation)
     }
+    @Test
+    fun sumOfFirstAndLastSharedChar() {
+        val totalCalculation = Day1Part2().totalCalculation(listOf("eightwothree"))
+        val expected = 83
+        Assertions.assertEquals(expected, totalCalculation)
+    }
 
     @Test
     fun examplePart2() {
