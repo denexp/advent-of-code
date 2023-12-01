@@ -1,8 +1,29 @@
 package day1
 
 class Day1Part2 {
-    fun totalCalculation(listOf: List<String>): Int {
-        return 0
+    val validNumbers = mapOf(
+        "one" to "1",
+        "two" to "2",
+        "three" to "3",
+        "four" to "4",
+        "five" to "5",
+        "six" to "6",
+        "seven" to "7",
+        "eight" to "8",
+        "nine" to "9"
+    )
+    fun totalCalculation(input: List<String>): Int {
+        input.ifEmpty { return 0 }
+
+        return input.sumOf {
+            (findFirst(it) + findLast(it)).toInt()
+        }
     }
 
+    private fun findFirst(input: String): String {
+        return validNumbers[input] ?: "0"
+    }
+    private fun findLast(input: String): String {
+        return validNumbers[input] ?: "0"
+    }
 }
