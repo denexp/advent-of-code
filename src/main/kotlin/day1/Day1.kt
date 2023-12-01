@@ -1,7 +1,9 @@
 class Day1 {
     fun totalCalculation(input: List<String>): Int {
         input.ifEmpty { return 0 }
-        return input.sumOf { findFirst(it) + findLast(it) }
+        return input.sumOf {
+            findFirst(it) + findLast(it)
+        }
     }
 
     private fun findFirst(input: String): Int {

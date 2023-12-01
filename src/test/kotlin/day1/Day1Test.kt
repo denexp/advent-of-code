@@ -4,6 +4,7 @@ import Day1
 import FileManager.readLines
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
+import java.io.File
 
 class Day1Test {
 
@@ -35,7 +36,19 @@ class Day1Test {
     @Test
     fun sumOfMultiples() {
         val totalCalculation = Day1().totalCalculation(listOf("1awgass3", "awgya3ehge"))
-        val expected = 10
+        val expected = 19
+        Assertions.assertEquals(expected, totalCalculation)
+    }
+
+    @Test
+    fun example() {
+        val totalCalculation = Day1().totalCalculation(listOf(
+            "1abc2",
+            "pqr3stu8vwx",
+            "a1b2c3d4e5f",
+            "treb7uchet",
+        ))
+        val expected = 142
         Assertions.assertEquals(expected, totalCalculation)
     }
     @Test
