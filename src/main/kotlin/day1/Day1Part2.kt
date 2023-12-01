@@ -32,25 +32,6 @@ class Day1Part2(val day1: Day1 = Day1()) {
         return input
     }
 
-    private fun findFirst(input: String): String {
-        val list = validNumbers.keys
-        for (i in list.indices) {
-            if (isValid(input, list, i)) {
-                return validNumbers.values.elementAt(i)
-            }
-        }
-        return "0"
-    }
-    private fun findLast(input: String): String {
-        val list = validNumbers.keys
-        for (i in list.indices.reversed()) {
-            if (isValid(input, list, i)) {
-                return validNumbers.values.elementAt(i)
-            }
-        }
-        return "0"
-    }
-
     private fun isValid(input: String, list: Set<String>, i: Int) =
         input.contains(list.elementAt(i))
 }
