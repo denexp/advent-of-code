@@ -20,6 +20,13 @@ class Day1part2Test {
     }
 
     @Test
+    fun sumOfFirst() {
+        val totalCalculation = Day1Part2().totalCalculation(listOf("two"))
+        val expected = 22
+        Assertions.assertEquals(expected, totalCalculation)
+    }
+
+    @Test
     fun examplePart2() {
         val totalCalculation = Day1Part2().totalCalculation(listOf(
             "two1nine",
