@@ -41,7 +41,7 @@ class Day1Test {
     }
 
     @Test
-    fun example() {
+    fun examplePart1() {
         val totalCalculation = Day1().totalCalculation(listOf(
             "1abc2",
             "pqr3stu8vwx",
@@ -56,6 +56,21 @@ class Day1Test {
         val input = "./src/test/kotlin/day1/Input".readLines()
         val totalCalculation = Day1().totalCalculation(input)
         val expected = 54304
+        Assertions.assertEquals(expected, totalCalculation)
+    }
+
+    @Test
+    fun examplePart2() {
+        val totalCalculation = Day1().totalCalculation(listOf(
+            "two1nine",
+            "eightwothree",
+            "abcone2threexyz",
+            "xtwone3four",
+            "4nineeightseven2",
+            "zoneight234",
+            "7pqrstsixteen",
+        ))
+        val expected = 281
         Assertions.assertEquals(expected, totalCalculation)
     }
 }
