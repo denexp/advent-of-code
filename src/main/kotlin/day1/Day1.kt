@@ -1,6 +1,7 @@
 class Day1 {
     fun totalCalculation(input: List<String>): Int {
-        return 0
+        input.ifEmpty { return 0 }
+        return input.first().toIntOrNull() ?: 0
     }
 
 }
