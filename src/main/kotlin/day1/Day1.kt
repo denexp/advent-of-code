@@ -2,11 +2,13 @@ class Day1 {
     fun totalCalculation(input: List<String>): Int {
         input.ifEmpty { return 0 }
         return input.sumOf {
-            (findFirst(it) + findLast(it)).toInt()
+            sumElement(it)
         }
     }
 
-    private fun findFirst(input: String): String {
+    fun sumElement(it: String) = (findFirst(it) + findLast(it)).toInt()
+
+    fun findFirst(input: String): String {
         val chars = input.toCharArray()
         for (i in chars.indices) {
             if (chars[i].isDigit()) {
@@ -15,7 +17,7 @@ class Day1 {
         }
         return "0"
     }
-    private fun findLast(input: String): String {
+    fun findLast(input: String): String {
         val chars = input.toCharArray()
         for (i in chars.indices.reversed()) {
             if (chars[i].isDigit()) {
