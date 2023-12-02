@@ -17,19 +17,28 @@ class Day1Part2(val day1: Day1 = Day1()) {
     fun totalCalculation(input: List<String>): Int {
         input.ifEmpty { return 0 }
         return input.sumOf {
-            val element = toDigit(it)
-            day1.sumElement(element)
+            day1.sumElement(toDigit(it))
         }
     }
 
     private fun toDigit(input: String): String {
-        val list = validNumbers.keys
-        for (i in list.indices) {
-            if (isValid(input, list, i)) {
-                return toDigit(input.replace(list.elementAt(i), validNumbers.values.elementAt(i)))
+        var newInput = input
+        val chars = input.toCharArray()
+        var word = String()
+        for (i in chars.indices) {
+            if (chars[i].isDigit()) {
+                word = String()
+                continue
+            }
+            word += chars[i]
+            for (j in validNumbers.keys.indices) {
+                if(word.contains(validNumbers.keys.elementAt(j))) {
+                    newInput = newInput.replace(validNumbers.keys.elementAt(j), validNumbers[validNumbers.keys.elementAt(j)] ?: word)
+                    word = String()
+                }
             }
         }
-        return input
+        return newInput
     }
 
     private fun isValid(input: String, list: Set<String>, i: Int) =
