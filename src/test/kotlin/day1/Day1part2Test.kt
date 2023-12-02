@@ -1,5 +1,6 @@
 package day1
 
+import FileManager.readLines
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 
@@ -64,6 +65,13 @@ class Day1part2Test {
             "7pqrstsixteen",
         ))
         val expected = 281
+        Assertions.assertEquals(expected, totalCalculation)
+    }
+    @Test
+    fun day1part2() {
+        val input = "./src/test/kotlin/day1/Input".readLines()
+        val totalCalculation = Day1Part2().totalCalculation(input)
+        val expected = 0
         Assertions.assertEquals(expected, totalCalculation)
     }
 }
