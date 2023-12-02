@@ -17,28 +17,32 @@ class Day1Part2(val day1: Day1 = Day1()) {
     fun totalCalculation(input: List<String>): Int {
         input.ifEmpty { return 0 }
         return input.sumOf {
-            day1.sumElement(toDigit(it))
+            day1.sumElement(
+                replaceForDigit(it, false) + replaceForDigit(it, true)
+            )
         }
     }
 
-    private fun toDigit(input: String): String {
-        var newInput = input
+    private fun replaceForDigit(input: String, reversedRange: Boolean): String {
         val chars = input.toCharArray()
         var word = String()
-        for (i in chars.indices) {
+        val charsIndices = if (reversedRange) chars.indices.reversed() else chars.indices
+        for (i in charsIndices) {
             if (chars[i].isDigit()) {
                 word = String()
                 continue
             }
-            word += chars[i]
+            if (reversedRange)
+                word = "${chars[i]}$word"
+            else
+                word += chars[i]
             for (j in validNumbers.keys.indices) {
                 if(word.contains(validNumbers.keys.elementAt(j))) {
-                    newInput = newInput.replace(validNumbers.keys.elementAt(j), validNumbers[validNumbers.keys.elementAt(j)] ?: word)
-                    word = String()
+                    return input.replace(validNumbers.keys.elementAt(j), validNumbers[validNumbers.keys.elementAt(j)] ?: word)
                 }
             }
         }
-        return newInput
+        return input
     }
 
     private fun isValid(input: String, list: Set<String>, i: Int) =
