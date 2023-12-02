@@ -10,4 +10,10 @@ class Day2Test {
         val expected = 0
         Assertions.assertEquals(expected, total)
     }
+    @Test
+    fun emptyContent() {
+        val total = Day2().sumOfGameIds(listOf(""))
+        val expected = 0
+        Assertions.assertEquals(expected, total)
+    }
 }
