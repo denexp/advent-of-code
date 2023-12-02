@@ -71,7 +71,7 @@ class Day1part2Test {
     fun day1part2() {
         val input = "./src/test/kotlin/day1/Input".readLines()
         val totalCalculation = Day1Part2().totalCalculation(input)
-        val expected = 0
+        val expected = 54418
         Assertions.assertEquals(expected, totalCalculation)
     }
 }
