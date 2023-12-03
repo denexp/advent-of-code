@@ -5,11 +5,11 @@ class Day2 {
     fun sumOfGameIds(input: List<String>, loadedInfo: String): Int {
         val info = extractCubes(loadedInfo).flatten()
         input.ifEmpty { return 0 }
-        val game = input.first()
-        val gameId = extractGame(game)
-        val cubesSequence = extractCubes(game)
-
-        return validGame(cubesSequence, info, gameId)
+        return input.sumOf {
+            val gameId = extractGame(it)
+            val cubesSequence = extractCubes(it)
+            validGame(cubesSequence, info, gameId)
+        }
     }
 
     private fun validGame(cubesSequence: List<List<Cubes>>, loadedInfo: List<Cubes>, gameId: Int): Int {
