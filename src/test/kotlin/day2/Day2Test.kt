@@ -55,7 +55,7 @@ class Day2Test {
     fun day2() {
         val input = "./src/test/kotlin/day2/Input".readLines()
         val total = Day2().sumOfGameIds(input, loadedInfo)
-        val expected = 0
+        val expected = 3099
         Assertions.assertEquals(expected, total)
     }
 }
