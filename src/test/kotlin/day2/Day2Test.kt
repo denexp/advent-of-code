@@ -21,9 +21,21 @@ class Day2Test {
         Assertions.assertEquals(expected, total)
     }
     @Test
+    fun gameId() {
+        val total = Day2().sumOfGameIds(listOf("Game 10: 1 blue"), loadedInfo)
+        val expected = 10
+        Assertions.assertEquals(expected, total)
+    }
+    @Test
     fun possibleGame() {
         val total = Day2().sumOfGameIds(listOf("Game 1: 13 blue"), loadedInfo)
         val expected = 1
+        Assertions.assertEquals(expected, total)
+    }
+    @Test
+    fun nonPossibleGameComplete() {
+        val total = Day2().sumOfGameIds(listOf("Game 1: 4 red, 8 green; 8 green, 6 red; 13 red, 8 green; 2 blue, 4 red, 4 green"), loadedInfo)
+        val expected = 0
         Assertions.assertEquals(expected, total)
     }
     @Test
