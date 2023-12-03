@@ -1,5 +1,6 @@
 package day2
 
+import FileManager.readLines
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 
@@ -35,6 +36,14 @@ class Day2Test {
             "Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green"
         ), loadedInfo)
         val expected = 8
+        Assertions.assertEquals(expected, total)
+    }
+
+    @Test
+    fun day2() {
+        val input = "./src/test/kotlin/day2/Input".readLines()
+        val total = Day2().sumOfGameIds(input, loadedInfo)
+        val expected = 0
         Assertions.assertEquals(expected, total)
     }
 }
