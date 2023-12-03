@@ -11,5 +11,11 @@ class Day2Part2Test {
         val expected = 0
         Assertions.assertEquals(expected, total)
     }
+    @Test
+    fun emptyContent() {
+        val total = Day2Part2().sumOfPower(listOf(""))
+        val expected = 0
+        Assertions.assertEquals(expected, total)
+    }
 
 }
