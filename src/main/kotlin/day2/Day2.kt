@@ -15,7 +15,8 @@ class Day2 {
     private fun validGame(cubesSequence: List<List<Cubes>>, loadedInfo: List<Cubes>, gameId: Int): Int {
         for (list in cubesSequence) {
             for (cubes in loadedInfo) {
-                val match = list.any { it.color == cubes.color && it.n <= cubes.n }
+                val c = list.find { it.color == cubes.color } ?: continue
+                val match = c.n <= cubes.n
                 if (!match)
                     return 0
             }
