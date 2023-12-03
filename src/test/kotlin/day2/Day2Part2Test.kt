@@ -55,7 +55,7 @@ class Day2Part2Test {
     fun day2Part2() {
         val input = "./src/test/kotlin/day2/Input".readLines()
         val total = Day2Part2().sumOfPower(input)
-        val expected = 0
+        val expected = 72970
         Assertions.assertEquals(expected, total)
     }
 
