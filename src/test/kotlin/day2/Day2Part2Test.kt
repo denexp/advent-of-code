@@ -17,7 +17,7 @@ class Day2Part2Test {
         val expected = 0
         Assertions.assertEquals(expected, total)
     }
-    @Test //Game 3: 8 green, 6 blue, 20 red; 5 blue, 4 red, 13 green; 5 green, 1 red
+    @Test
     fun fewestNumberOfCubes() {
         val total = Day2Part2().fewestNumberOfCubes(
             listOf(
@@ -45,4 +45,10 @@ class Day2Part2Test {
         Assertions.assertEquals(expected, total)
     }
 
+    @Test
+    fun powerOfOne() {
+        val total = Day2Part2().sumOfPower(listOf("Game 3: 8 green, 6 blue, 20 red; 5 blue, 4 red, 13 green; 5 green, 1 red"))
+        val expected = 1560
+        Assertions.assertEquals(expected, total)
+    }
 }
