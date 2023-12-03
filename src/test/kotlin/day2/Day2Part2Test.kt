@@ -17,5 +17,32 @@ class Day2Part2Test {
         val expected = 0
         Assertions.assertEquals(expected, total)
     }
+    @Test //Game 3: 8 green, 6 blue, 20 red; 5 blue, 4 red, 13 green; 5 green, 1 red
+    fun fewestNumberOfCubes() {
+        val total = Day2Part2().fewestNumberOfCubes(
+            listOf(
+                listOf(
+                    Day2.Cubes(8, "green"),
+                    Day2.Cubes(6, "blue"),
+                    Day2.Cubes(20, "red"),
+                ),
+                listOf(
+                    Day2.Cubes(5, "blue"),
+                    Day2.Cubes(4, "red"),
+                    Day2.Cubes(13, "green"),
+                ),
+                listOf(
+                    Day2.Cubes(5, "green"),
+                    Day2.Cubes(1, "red"),
+                ),
+            )
+        )
+        val expected = listOf(
+            Day2.Cubes(13, "green"),
+            Day2.Cubes(6, "blue"),
+            Day2.Cubes(20, "red"),
+        )
+        Assertions.assertEquals(expected, total)
+    }
 
 }
