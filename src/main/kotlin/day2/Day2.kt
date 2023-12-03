@@ -41,8 +41,7 @@ class Day2 {
     }
     fun extractGame(input: String): Int {
         input.ifEmpty { return 0 }
-        val gameIndex = input.indexOfFirst { it.isDigit() }
-        return input[gameIndex].digitToInt()
+        return input.split(":").first().replace("Game ", String()).toInt()
     }
 
 }
