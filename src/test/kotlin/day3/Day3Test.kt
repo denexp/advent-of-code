@@ -81,4 +81,10 @@ class Day3Test {
         val expected = listOf(23, 87)
         Assertions.assertEquals(expected, total)
     }
+    @Test
+    fun adjacentNumbersInvalid() {
+        val total = Day3().adjacentNumbers(3, "...*...14.".toCharArray())
+        val expected = emptyList()
+        Assertions.assertEquals(expected, total)
+    }
 }
