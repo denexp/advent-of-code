@@ -102,7 +102,7 @@ class Day3Test {
 
     @Test
     fun validNumbers() {
-        val total = Day3().validNumbers(listOf("1*23.4&14."))
+        val total = Day3().validNumbers("1*23.4&14.".toCharArray())
         val expected = listOf(1, 23, 4, 14)
         Assertions.assertEquals(expected, total)
     }
