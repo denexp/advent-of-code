@@ -48,4 +48,17 @@ class Day3Test {
         val expected = null
         Assertions.assertEquals(expected, total)
     }
+
+    @Test
+    fun previousNumberValid() {
+        val total = Day3().previousNumber(4, "..2*...14.".toCharArray())
+        val expected = 2
+        Assertions.assertEquals(expected, total)
+    }
+    @Test
+    fun previousNumberInvalid() {
+        val total = Day3().previousNumber(3, "...*...14.".toCharArray())
+        val expected = null
+        Assertions.assertEquals(expected, total)
+    }
 }
