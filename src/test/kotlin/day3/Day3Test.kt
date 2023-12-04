@@ -87,4 +87,16 @@ class Day3Test {
         val expected = emptyList<Int>()
         Assertions.assertEquals(expected, total)
     }
+    @Test
+    fun diagonalNumbers() {
+        val total = Day3().diagonalNumbers(
+            listOf(
+                "467..114..",
+                "...*......",
+                "..3.5..63.",
+            )
+        )
+        val expected = listOf(467, 3, 5)
+        Assertions.assertEquals(expected, total)
+    }
 }
