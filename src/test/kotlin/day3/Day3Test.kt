@@ -37,14 +37,28 @@ class Day3Test {
     }
 
     @Test
+    fun nextNumberLimit() {
+        val total = Day3().nextNumber(9, ".......14*".toCharArray())
+        val expected = 0
+        Assertions.assertEquals(expected, total)
+    }
+
+    @Test
     fun nextNumberValid() {
-        val total = Day3().nextNumber(4, "...*123..14.".toCharArray())
+        val total = Day3().nextNumber(3, "...*123..14.".toCharArray())
         val expected = 123
         Assertions.assertEquals(expected, total)
     }
     @Test
     fun nextNumberInvalid() {
-        val total = Day3().nextNumber(4, "...*...14.".toCharArray())
+        val total = Day3().nextNumber(3, "...*...14.".toCharArray())
+        val expected = 0
+        Assertions.assertEquals(expected, total)
+    }
+
+    @Test
+    fun previousNumberLimit() {
+        val total = Day3().previousNumber(0, "*......14.".toCharArray())
         val expected = 0
         Assertions.assertEquals(expected, total)
     }
