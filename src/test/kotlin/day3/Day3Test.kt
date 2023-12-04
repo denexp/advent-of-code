@@ -42,4 +42,10 @@ class Day3Test {
         val expected = 1
         Assertions.assertEquals(expected, total)
     }
+    @Test
+    fun nextNumberInvalid() {
+        val total = Day3().nextNumber(3, "...*...14.".toCharArray())
+        val expected = null
+        Assertions.assertEquals(expected, total)
+    }
 }
