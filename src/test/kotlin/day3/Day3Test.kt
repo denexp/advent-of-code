@@ -107,4 +107,17 @@ class Day3Test {
         Assertions.assertEquals(expected, total)
     }
 
+    @Test
+    fun multiDiagonalNumbers() {
+        val total = Day3().multiDiagonalNumbers(1, 3,
+            listOf(
+                "467..114..",
+                "...*...#..",
+                "..3.5..63.",
+            ).map { it.toCharArray() }
+        )
+        val expected = listOf(467, 3, 5, 114, 63)
+        Assertions.assertTrue(expected.containsAll(total), "expected: $expected\nactual: $total")
+        Assertions.assertEquals(expected, total)
+    }
 }
