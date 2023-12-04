@@ -22,4 +22,10 @@ class Day3Test {
         val expected = false
         Assertions.assertEquals(expected, total)
     }
+    @Test
+    fun detectDotAsSymbol() {
+        val total = Day3().validSymbol("*".single())
+        val expected = true
+        Assertions.assertEquals(expected, total)
+    }
 }

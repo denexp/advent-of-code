@@ -5,4 +5,6 @@ class Day3 {
         return 0
     }
 
+    fun validSymbol(input: Char) = !input.isLetterOrDigit() && input != ".".single()
+
 }
