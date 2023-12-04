@@ -16,6 +16,17 @@ class Day3 {
         }
         return number.toIntOrNull()
     }
+    fun previousNumber(i: Int, chars: CharArray): Int? {
+        val previousChars = chars.copyOfRange(0, i)
+        var number = ""
+        for (j in previousChars.indices.reversed()) {
+            if (previousChars[j].isDigit())
+                number = "${previousChars[j]}$number"
+            else
+                break
+        }
+        return number.toIntOrNull()
+    }
 
     fun validSymbol(input: Char) = !input.isLetterOrDigit() && input != ".".single()
 
