@@ -28,4 +28,18 @@ class Day3Test {
         val expected = true
         Assertions.assertEquals(expected, total)
     }
+
+    @Test
+    fun nonValidNumbers() {
+        val total = Day3().sumOfEngineNumbers(listOf("467..114.."))
+        val expected = 0
+        Assertions.assertEquals(expected, total)
+    }
+
+    @Test
+    fun validNumber() {
+        val total = Day3().sumOfEngineNumbers(listOf("467*..114.",))
+        val expected = 467
+        Assertions.assertEquals(expected, total)
+    }
 }
