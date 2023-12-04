@@ -75,4 +75,10 @@ class Day3Test {
         val expected = 0
         Assertions.assertEquals(expected, total)
     }
+    @Test
+    fun adjacentNumbers() {
+        val total = Day3().adjacentNumbers(3, ".23*87.14.".toCharArray())
+        val expected = listOf(23, 87)
+        Assertions.assertEquals(expected, total)
+    }
 }
