@@ -45,7 +45,7 @@ class Day3 {
         ).flatten()
     }
 
-    fun validNumbers(input: CharArray): List<Int> {
+    fun multiAdjacentNumbers(input: CharArray): List<Int> {
         val symbolIndices = input.mapIndexed { i, it -> i to validSymbol(it) }
             .filter { it.second }
             .map { it.first }

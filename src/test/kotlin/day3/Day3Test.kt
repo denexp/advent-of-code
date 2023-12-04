@@ -101,9 +101,10 @@ class Day3Test {
     }
 
     @Test
-    fun validNumbers() {
-        val total = Day3().validNumbers("1*23.4&14.".toCharArray())
+    fun multiAdjacentNumbers() {
+        val total = Day3().multiAdjacentNumbers("1*23.4&14.".toCharArray())
         val expected = listOf(1, 23, 4, 14)
         Assertions.assertEquals(expected, total)
     }
+
 }
