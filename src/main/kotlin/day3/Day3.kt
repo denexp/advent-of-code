@@ -36,4 +36,13 @@ class Day3 {
         ).filter { it != 0 }
     }
 
+    fun diagonalNumbers(i: Int, j: Int, input: List<CharArray>): List<Int> {
+        val previous = input.getOrNull(i-1)
+        val next = input.getOrNull(i+1)
+        return listOfNotNull(
+            previous?.let { adjacentNumbers(j, it) },
+            next?.let { adjacentNumbers(j, it) }
+        ).flatten()
+    }
+
 }

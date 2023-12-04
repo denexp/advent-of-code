@@ -89,12 +89,12 @@ class Day3Test {
     }
     @Test
     fun diagonalNumbers() {
-        val total = Day3().diagonalNumbers(
+        val total = Day3().diagonalNumbers(1, 3,
             listOf(
                 "467..114..",
                 "...*......",
                 "..3.5..63.",
-            )
+            ).map { it.toCharArray() }
         )
         val expected = listOf(467, 3, 5)
         Assertions.assertEquals(expected, total)
