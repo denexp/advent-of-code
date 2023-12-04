@@ -37,9 +37,9 @@ class Day3Test {
     }
 
     @Test
-    fun validNumber() {
-        val total = Day3().sumOfEngineNumbers(listOf("467*..114.",))
-        val expected = 467
+    fun nextNumberValid() {
+        val total = Day3().nextNumber(4, "...*1..14.".toCharArray())
+        val expected = 1
         Assertions.assertEquals(expected, total)
     }
 }
