@@ -8,7 +8,7 @@ class Day3 {
 
     fun nextNumber(i: Int, chars: CharArray): Int {
         var number = ""
-        for (j in i until chars.count()) {
+        for (j in i+1 until chars.count()) {
             if (chars[j].isDigit())
                 number += chars[j]
             else
