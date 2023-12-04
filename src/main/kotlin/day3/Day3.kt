@@ -29,5 +29,11 @@ class Day3 {
     }
 
     fun validSymbol(input: Char) = !input.isLetterOrDigit() && input != ".".single()
+    fun adjacentNumbers(i: Int, chars: CharArray): List<Int> {
+        return listOf(
+            previousNumber(i, chars),
+            nextNumber(i, chars)
+        )
+    }
 
 }
