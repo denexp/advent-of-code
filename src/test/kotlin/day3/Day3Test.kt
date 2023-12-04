@@ -45,7 +45,7 @@ class Day3Test {
     @Test
     fun nextNumberInvalid() {
         val total = Day3().nextNumber(4, "...*...14.".toCharArray())
-        val expected = null
+        val expected = 0
         Assertions.assertEquals(expected, total)
     }
 
@@ -58,7 +58,7 @@ class Day3Test {
     @Test
     fun previousNumberInvalid() {
         val total = Day3().previousNumber(3, "...*...14.".toCharArray())
-        val expected = null
+        val expected = 0
         Assertions.assertEquals(expected, total)
     }
 }

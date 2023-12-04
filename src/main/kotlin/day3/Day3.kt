@@ -6,7 +6,7 @@ class Day3 {
         return 0
     }
 
-    fun nextNumber(i: Int, chars: CharArray): Int? {
+    fun nextNumber(i: Int, chars: CharArray): Int {
         var number = ""
         for (j in i until chars.count()) {
             if (chars[j].isDigit())
@@ -14,9 +14,9 @@ class Day3 {
             else
                 break
         }
-        return number.toIntOrNull()
+        return number.toIntOrNull() ?: 0
     }
-    fun previousNumber(i: Int, chars: CharArray): Int? {
+    fun previousNumber(i: Int, chars: CharArray): Int {
         val previousChars = chars.copyOfRange(0, i)
         var number = ""
         for (j in previousChars.indices.reversed()) {
@@ -25,7 +25,7 @@ class Day3 {
             else
                 break
         }
-        return number.toIntOrNull()
+        return number.toIntOrNull() ?: 0
     }
 
     fun validSymbol(input: Char) = !input.isLetterOrDigit() && input != ".".single()
