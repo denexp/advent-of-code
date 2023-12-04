@@ -99,4 +99,11 @@ class Day3Test {
         val expected = listOf(467, 3, 5)
         Assertions.assertEquals(expected, total)
     }
+
+    @Test
+    fun validNumbers() {
+        val total = Day3().validNumbers(listOf("1*23.4&14."))
+        val expected = listOf(1, 23, 4, 14)
+        Assertions.assertEquals(expected, total)
+    }
 }
