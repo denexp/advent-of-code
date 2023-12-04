@@ -33,7 +33,7 @@ class Day3 {
         return listOf(
             previousNumber(i, chars),
             nextNumber(i, chars)
-        )
+        ).filter { it != 0 }
     }
 
 }

@@ -84,7 +84,7 @@ class Day3Test {
     @Test
     fun adjacentNumbersInvalid() {
         val total = Day3().adjacentNumbers(3, "...*...14.".toCharArray())
-        val expected = emptyList()
+        val expected = emptyList<Int>()
         Assertions.assertEquals(expected, total)
     }
 }
