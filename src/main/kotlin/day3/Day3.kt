@@ -3,8 +3,10 @@ package day3
 class Day3 {
     fun sumOfEngineNumbers(input: List<String>): Int {
         input.ifEmpty { return 0 }
-
-        return multiAdjacentNumbers(input.first().toCharArray()).sum()
+        return multiDiagonalNumbers(input).sum() +
+                input.sumOf {
+                    multiAdjacentNumbers(it.toCharArray()).sum()
+                }
     }
 
     fun nextNumber(i: Int, chars: CharArray): Int {
@@ -102,7 +104,7 @@ class Day3 {
         return e.filter { it != 0 }
     }
 
-    fun multiDiagonalNumbers(input: List<CharArray>): List<Int> {
+    fun multiDiagonalNumbers(input: List<String>): List<Int> {
         val symbolIndices = input.mapIndexed { i, it ->
             i to it.mapIndexed { index, char -> index to validSymbol(char) }
                 .filter { it.second }
@@ -110,7 +112,7 @@ class Day3 {
         }
         return symbolIndices.map { index ->
             index.second.map {
-                diagonalNumbers(index.first, it, input)
+                diagonalNumbers(index.first, it, input.map { it.toCharArray() })
             }.flatten().toSet()
         }.flatten()
     }
