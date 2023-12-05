@@ -16,39 +16,41 @@ class Day3 {
         if(chars[i].isDigit()) {
             index = i
             val previousChars = chars.copyOfRange(0, i)
-            for (j in previousChars.indices.reversed()) {
-                if (previousChars[j].isDigit())
-                    number = "${previousChars[j]}$number"
-                else
-                    break
-            }
+            number = findPrevious(previousChars, number)
         }
 
-        for (k in index until chars.count()) {
-            if (chars[k].isDigit())
-                number += chars[k]
-            else
-                break
-        }
+        number = findNext(index, chars, number)
         return number.toIntOrNull() ?: 0
     }
     fun previousNumber(i: Int, chars: CharArray): Int {
         val index = if(!chars[i].isDigit()) i else i+1
         val previousChars = chars.copyOfRange(0, index)
         var number = ""
+        number = findNext(index, chars, number)
+        number = findPrevious(previousChars, number)
+        return number.toIntOrNull() ?: 0
+    }
+
+    private fun findNext(index: Int, chars: CharArray, number: String): String {
+        var number1 = number
         for (k in index until chars.count()) {
             if (chars[k].isDigit())
-                number += chars[k]
+                number1 += chars[k]
             else
                 break
         }
+        return number1
+    }
+
+    private fun findPrevious(previousChars: CharArray, number: String): String {
+        var number1 = number
         for (j in previousChars.indices.reversed()) {
             if (previousChars[j].isDigit())
-                number = "${previousChars[j]}$number"
+                number1 = "${previousChars[j]}$number1"
             else
                 break
         }
-        return number.toIntOrNull() ?: 0
+        return number1
     }
 
     fun validSymbol(input: Char) = !input.isLetterOrDigit() && input != ".".single()
@@ -64,17 +66,10 @@ class Day3 {
         val previous = input.getOrNull(i-1)
         val next = input.getOrNull(i+1)
 
-        val adjacents = { k: Int, pChars: CharArray?, nChars: CharArray? ->
-            var pNumbers = pChars?.let { adjacentNumbers(k, it) }
-            val nNumbers = nChars?.let { adjacentNumbers(k, it) }
-
-            if (pNumbers?.second == nNumbers?.first) {
-                pNumbers = pNumbers?.copy(second = 0)
-            }
-            listOfNotNull(pNumbers?.toList(), nNumbers?.toList())
-        }
-
-        return adjacents(j, previous, next).flatten().filter { it != 0 }
+        val pNumbers = previous?.let { adjacentNumbers(j, it) }
+        val nNumbers = next?.let { adjacentNumbers(j, it) }
+        val adjacents = listOfNotNull(pNumbers?.toList(), nNumbers?.toList())
+        return adjacents.flatten().filter { it != 0 }
     }
 
     fun multiAdjacentNumbers(input: CharArray): List<Int> {

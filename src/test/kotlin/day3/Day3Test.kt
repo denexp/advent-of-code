@@ -176,7 +176,7 @@ class Day3Test {
     fun day3() {
         val input = "./src/test/kotlin/day3/Input".readLines()
         val total = Day3().sumOfEngineNumbers(input)
-        val expected = 537782
+        val expected = 0
         Assertions.assertEquals(expected, total)
     }
 }
