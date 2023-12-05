@@ -120,4 +120,14 @@ class Day3Test {
         Assertions.assertTrue(expected.containsAll(total), "expected: $expected\nactual: $total")
         Assertions.assertEquals(expected, total)
     }
+    @Test
+    fun sumOfEngineNumbersSingleLine() {
+        val total = Day3().sumOfEngineNumbers(
+            listOf(
+                "4(6.1.-46.",
+            )
+        )
+        val expected = 4 + 6 + 46
+        Assertions.assertEquals(expected, total)
+    }
 }
