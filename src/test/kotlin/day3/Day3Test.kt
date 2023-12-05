@@ -109,14 +109,14 @@ class Day3Test {
 
     @Test
     fun multiDiagonalNumbers() {
-        val total = Day3().multiDiagonalNumbers(1, 3,
+        val total = Day3().multiDiagonalNumbers(
             listOf(
-                "467..114..",
+                "46741.146.",
                 "...*...#..",
                 "..3.5..63.",
             ).map { it.toCharArray() }
         )
-        val expected = listOf(467, 3, 5, 114, 63)
+        val expected = listOf(46741, 3, 5, 146, 63)
         Assertions.assertTrue(expected.containsAll(total), "expected: $expected\nactual: $total")
         Assertions.assertEquals(expected, total)
     }
