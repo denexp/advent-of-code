@@ -121,7 +121,7 @@ class Day3Test {
                 "46741.146.",
                 "...*...#..",
                 "..3.5..63.",
-            ).map { it.toCharArray() }
+            )
         )
         val expected = listOf(46741, 3, 5, 146, 63)
         Assertions.assertTrue(expected.containsAll(total), "expected: $expected\nactual: $total")
@@ -135,7 +135,7 @@ class Day3Test {
                 "46741.146.",
                 ".=.*......",
                 "..3.5..63.",
-            ).map { it.toCharArray() }
+            )
         )
         val expected = listOf(46741, 3, 5)
         Assertions.assertTrue(expected.containsAll(total), "expected: $expected\nactual: $total")
@@ -149,6 +149,25 @@ class Day3Test {
             )
         )
         val expected = 4 + 6 + 46
+        Assertions.assertEquals(expected, total)
+    }
+    @Test
+    fun sumOfEngineNumbersExample() {
+        val total = Day3().sumOfEngineNumbers(
+            listOf(
+                "467..114..",
+                "...*......",
+                "..35..633.",
+                "......#...",
+                "617*......",
+                ".....+.58.",
+                "..592.....",
+                "......755.",
+                "...$.*....",
+                ".664.598..",
+            )
+        )
+        val expected = 4361
         Assertions.assertEquals(expected, total)
     }
 }
