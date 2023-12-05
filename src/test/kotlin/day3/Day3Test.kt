@@ -78,13 +78,13 @@ class Day3Test {
     @Test
     fun adjacentNumbers() {
         val total = Day3().adjacentNumbers(3, ".23*87.14.".toCharArray())
-        val expected = listOf(23, 87)
+        val expected = 23 to 87
         Assertions.assertEquals(expected, total)
     }
     @Test
     fun adjacentNumbersInvalid() {
         val total = Day3().adjacentNumbers(3, "...*...14.".toCharArray())
-        val expected = emptyList<Int>()
+        val expected = 0 to 0
         Assertions.assertEquals(expected, total)
     }
     @Test
@@ -104,6 +104,13 @@ class Day3Test {
     fun multiAdjacentNumbers() {
         val total = Day3().multiAdjacentNumbers("1*23.4&14.".toCharArray())
         val expected = listOf(1, 23, 4, 14)
+        Assertions.assertEquals(expected, total)
+    }
+
+    @Test
+    fun multiAdjacentNumbersSharedValues() {
+        val total = Day3().multiAdjacentNumbers("1*3=4.&14.".toCharArray())
+        val expected = listOf(1, 3, 4, 14)
         Assertions.assertEquals(expected, total)
     }
 

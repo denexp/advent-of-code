@@ -50,30 +50,56 @@ class Day3 {
     }
 
     fun validSymbol(input: Char) = !input.isLetterOrDigit() && input != ".".single()
-    fun adjacentNumbers(i: Int, chars: CharArray): List<Int> {
+    fun adjacentNumbers(i: Int, chars: CharArray): Pair<Int, Int> {
         var (previous, next) =  previousNumber(i, chars) to nextNumber(i, chars)
-        if (chars[i].isDigit() && previous == next) {
+        if ((chars[i].isDigit() && previous == next) ) {
             previous = 0
         }
-        return listOf(previous, next).filter { it != 0 }
+        return previous to next
     }
 
     fun diagonalNumbers(i: Int, j: Int, input: List<CharArray>): List<Int> {
         val previous = input.getOrNull(i-1)
         val next = input.getOrNull(i+1)
-        return listOfNotNull(
-            previous?.let { adjacentNumbers(j, it) },
-            next?.let { adjacentNumbers(j, it) }
-        ).flatten()
+
+        val adjacents = { k: Int, pChars: CharArray?, nChars: CharArray? ->
+            var pNumbers = pChars?.let { adjacentNumbers(k, it) }
+            val nNumbers = nChars?.let { adjacentNumbers(k, it) }
+
+            if (pNumbers?.second == nNumbers?.first) {
+                pNumbers = pNumbers?.copy(second = 0)
+            }
+            listOfNotNull(pNumbers?.toList(), nNumbers?.toList())
+        }
+
+        return adjacents(j, previous, next).flatten().filter { it != 0 }
     }
 
     fun multiAdjacentNumbers(input: CharArray): List<Int> {
         val symbolIndices = input.mapIndexed { i, it -> i to validSymbol(it) }
             .filter { it.second }
             .map { it.first }
-        return symbolIndices.map {
-            adjacentNumbers(it, input)
-        }.flatten()
+        val ad = symbolIndices.map { adjacentNumbers(it, input) }
+        val e = mutableListOf<Int>()
+        for (i in 0 until ad.count()) {
+            val actual = ad[i]
+            val next = ad.getOrNull(i+1)
+            if (i == 0)
+                e.add(actual.first)
+            if (actual.second == next?.first) {
+                e.add(actual.second)
+                e.add(next.second)
+            } else {
+                if (i == 0)
+                    e.add(actual.second)
+                if (next != null) {
+                    e.add(next.first)
+                    e.add(next.second)
+                }
+            }
+        }
+
+        return e.filter { it != 0 }
     }
 
     fun multiDiagonalNumbers(input: List<CharArray>): List<Int> {
