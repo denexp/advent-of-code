@@ -2,8 +2,9 @@ package day3
 
 class Day3 {
     fun sumOfEngineNumbers(input: List<String>): Int {
+        input.ifEmpty { return 0 }
 
-        return 0
+        return multiAdjacentNumbers(input.first().toCharArray()).sum()
     }
 
     fun nextNumber(i: Int, chars: CharArray): Int {
