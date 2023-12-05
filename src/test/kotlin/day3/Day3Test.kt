@@ -1,5 +1,6 @@
 package day3
 
+import FileManager.readLines
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 
@@ -168,6 +169,14 @@ class Day3Test {
             )
         )
         val expected = 4361
+        Assertions.assertEquals(expected, total)
+    }
+
+    @Test
+    fun day3() {
+        val input = "./src/test/kotlin/day3/Input".readLines()
+        val total = Day3().sumOfEngineNumbers(input)
+        val expected = 537782
         Assertions.assertEquals(expected, total)
     }
 }
