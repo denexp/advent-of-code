@@ -127,6 +127,20 @@ class Day3Test {
         Assertions.assertTrue(expected.containsAll(total), "expected: $expected\nactual: $total")
         Assertions.assertEquals(expected, total)
     }
+
+    @Test
+    fun multiDiagonalNumbersSharedValues() {
+        val total = Day3().multiDiagonalNumbers(
+            listOf(
+                "46741.146.",
+                ".=.*......",
+                "..3.5..63.",
+            ).map { it.toCharArray() }
+        )
+        val expected = listOf(46741, 3, 5)
+        Assertions.assertTrue(expected.containsAll(total), "expected: $expected\nactual: $total")
+        Assertions.assertEquals(expected, total)
+    }
     @Test
     fun sumOfEngineNumbersSingleLine() {
         val total = Day3().sumOfEngineNumbers(

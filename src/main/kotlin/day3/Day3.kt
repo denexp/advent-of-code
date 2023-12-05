@@ -111,7 +111,7 @@ class Day3 {
         return symbolIndices.map { index ->
             index.second.map {
                 diagonalNumbers(index.first, it, input)
-            }.flatten()
+            }.flatten().toSet()
         }.flatten()
     }
 
